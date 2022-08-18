@@ -1,0 +1,133 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Expanding Cards">
+  <div class="container">
+    <div
+      class="panel active"
+      style="
+          background-image: url(https://images.unsplash.com/photo-1588392382834-a891154bca4d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80);
+        "
+    >
+      <h3>The Deep Forest</h3>
+    </div>
+
+    <div
+      class="panel"
+      style="
+          background-image: url(https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80);
+        "
+    >
+      <h3>The Giant Tree</h3>
+    </div>
+
+    <div
+      class="panel"
+      style="
+          background-image: url(https://images.unsplash.com/photo-1500534623283-312aade485b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80);
+        "
+    >
+      <h3>The Sunset</h3>
+    </div>
+
+    <div
+      class="panel"
+      style="
+          background-image: url(https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80);
+        "
+    >
+      <h3>The Snowy Mountains</h3>
+    </div>
+
+    <div
+      class="panel"
+      style="
+          background-image: url(https://images.unsplash.com/photo-1552083375-1447ce886485?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80);
+        "
+    >
+      <h3>The Big Lake</h3>
+    </div>
+  </div>
+</Layout>
+
+<script is:inline>
+  const panels = document.querySelectorAll(".panel");
+  panels.forEach((panel) => {
+    panel.addEventListener("click", () => {
+      removeActiveClasses();
+      panel.classList.add("active");
+    });
+  });
+
+  function removeActiveClasses() {
+    panels.forEach((panel) => {
+      panel.classList.remove("active");
+    });
+  }
+</script>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Roboto", sans-serif;
+    display: flex; /*used since most projects are centered*/
+    margin: 0;
+    height: 100vh; /*to make the height same as the the current whole browser size*
+  overflow: hidden; /*to avoid scrollbars*/
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    display: flex;
+    width: 90vw;
+  }
+
+  .panel {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 10px;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in; /*to apply animatino when flex propert is updated*/
+    color: #fff;
+  }
+
+  .panel h3 {
+    font-size: 24px;
+    position: absolute;
+    opacity: 0;
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .panel.active {
+    flex: 5; /*make the active panel biger*/
+  }
+
+  .panel.active h3 {
+    opacity: 1; /*show the text on active panel*/
+    transition: opacity 0.3s ease-in 0.4s;
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      width: 100vw;
+    }
+
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+      display: none;
+    }
+  }
+</style>

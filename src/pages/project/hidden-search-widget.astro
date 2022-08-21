@@ -1,0 +1,92 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Hidden search widget">
+  <div class="search">
+    <input type="text" class="input" placeholder="Search..." id="" />
+    <button class="btn">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+</Layout>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-image: linear-gradient(90deg, #7d5fff, #7158e2);
+    font-family: "Roboto", sans-serif;
+    display: flex; /*used since most projects are centered*/
+    margin: 0;
+    height: 100vh; /*to make the height same as the the current whole browser size*/
+    overflow: hidden; /*to avoid scrollbars*/
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search {
+    position: relative;
+    height: 50px;
+  }
+
+  .search .input {
+    background-color: #fff;
+    border: 0;
+    font-size: 18px;
+    padding: 15px;
+    height: 50px;
+    width: 50px;
+
+    /* animation */
+    transition: width 0.3s ease;
+  }
+
+  .btn {
+    background-color: #fff;
+    border: 0;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+
+    /*The following rules are made in order to hide the textbox at first by
+  cover the remaining space of the textbox
+  and overlapped by this button*/
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+
+    /*animation*/
+    transition: transform 0.3s ease;
+  }
+
+  /* remove outline for search button and textbox when focused */
+  .btn:focus,
+  .input:focus {
+    outline: none;
+  }
+
+  .search.active .input {
+    width: 200px;
+  }
+
+  .search.active .btn {
+    transform: translateX(198px);
+  }
+</style>
+
+<script is:inline>
+  const search = document.querySelector(".search");
+  const btn = document.querySelector(".btn");
+  const input = document.querySelector(".input");
+
+  btn.addEventListener("click", () => {
+    search.classList.toggle("active"); //used to toggle classes in an element
+    input.focus(); // to focus on input element
+  });
+</script>

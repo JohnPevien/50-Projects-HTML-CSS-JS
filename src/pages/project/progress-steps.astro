@@ -1,180 +1,180 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from '../../layouts/Layout.astro'
 ---
 
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-  * {
-    box-sizing: border-box;
-  }
+    * {
+        box-sizing: border-box;
+    }
 
-  :root {
-    --line-border-fill: #3498db;
-    --line-border-empty: #e0e0e0;
-  }
+    :root {
+        --line-border-fill: #3498db;
+        --line-border-empty: #e0e0e0;
+    }
 
-  body {
-    font-family: "Roboto", sans-serif;
-    display: flex; /*used since most projects are centered*/
-    margin: 0;
-    height: 100vh; /*to make the height same as the the current whole browser size*/
-    overflow: hidden; /*to avoid scrollbars*/
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-  }
+    body {
+        font-family: 'Roboto', sans-serif;
+        display: flex; /*used since most projects are centered*/
+        margin: 0;
+        height: 100vh; /*to make the height same as the the current whole browser size*/
+        overflow: hidden; /*to avoid scrollbars*/
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+    }
 
-  .container {
-    text-align: center;
-  }
+    .container {
+        text-align: center;
+    }
 
-  .progress-container {
-    display: flex;
-    justify-content: space-between; /*separate the steps in the spaces available*/
-    position: relative;
-    margin-bottom: 30px;
-    max-width: 100%;
-    width: 450px;
-  }
+    .progress-container {
+        display: flex;
+        justify-content: space-between; /*separate the steps in the spaces available*/
+        position: relative;
+        margin-bottom: 30px;
+        max-width: 100%;
+        width: 450px;
+    }
 
-  /*create the line behind it*/
-  .progress-container::before {
-    content: "";
-    background-color: var(--line-border-empty);
-    position: absolute;
-    left: 0;
-    height: 4px;
-    width: 100%;
-    z-index: 1;
-    /*centers the line using top and transform translateY*/
-    top: 50%;
-    transform: translateY(-50%);
-  }
+    /*create the line behind it*/
+    .progress-container::before {
+        content: '';
+        background-color: var(--line-border-empty);
+        position: absolute;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        z-index: 1;
+        /*centers the line using top and transform translateY*/
+        top: 50%;
+        transform: translateY(-50%);
+    }
 
-  .progress {
-    background-color: var(--line-border-fill);
-    position: absolute;
-    left: 0;
-    height: 4px;
-    width: 0%;
-    z-index: 1;
-    transition: 0.4s ease;
-    /*centers the line using top and transform translateY*/
-    top: 50%;
-    transform: translateY(-50%);
-  }
+    .progress {
+        background-color: var(--line-border-fill);
+        position: absolute;
+        left: 0;
+        height: 4px;
+        width: 0%;
+        z-index: 1;
+        transition: 0.4s ease;
+        /*centers the line using top and transform translateY*/
+        top: 50%;
+        transform: translateY(-50%);
+    }
 
-  .circle {
-    background-color: #fff;
-    color: #999;
-    border-radius: 50%; /*50% to make it round*/
-    width: 30px;
-    height: 30px;
-    z-index: 2;
+    .circle {
+        background-color: #fff;
+        color: #999;
+        border-radius: 50%; /*50% to make it round*/
+        width: 30px;
+        height: 30px;
+        z-index: 2;
 
-    /*to align center the content*/
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 3px solid var(--line-border-empty);
-    transition: 0.4s ease;
-  }
+        /*to align center the content*/
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid var(--line-border-empty);
+        transition: 0.4s ease;
+    }
 
-  .circle.active {
-    border-color: var(--line-border-fill);
-  }
+    .circle.active {
+        border-color: var(--line-border-fill);
+    }
 
-  .btn {
-    background-color: var(--line-border-fill);
-    color: #fff;
-    border: 0;
-    border-radius: 6px;
-    cursor: pointer;
-    font-family: inherit;
-    padding: 8px 30px;
-    margin: 5px;
-    font-size: 14px;
-  }
+    .btn {
+        background-color: var(--line-border-fill);
+        color: #fff;
+        border: 0;
+        border-radius: 6px;
+        cursor: pointer;
+        font-family: inherit;
+        padding: 8px 30px;
+        margin: 5px;
+        font-size: 14px;
+    }
 
-  .btn:focus {
-    outline: none;
-  }
+    .btn:focus {
+        outline: none;
+    }
 
-  /*generate a simple effect of scaling then when button is active or clicked*/
-  .btn:active {
-    transform: scale(0.98);
-  }
+    /*generate a simple effect of scaling then when button is active or clicked*/
+    .btn:active {
+        transform: scale(0.98);
+    }
 
-  /*style disabled button*/
-  .btn:disabled {
-    background-color: var(--line-border-empty);
-    cursor: not-allowed;
-  }
+    /*style disabled button*/
+    .btn:disabled {
+        background-color: var(--line-border-empty);
+        cursor: not-allowed;
+    }
 </style>
 
 <Layout title="Progress Steps">
-  <div class="container">
-    <div class="progress-container">
-      <div class="progress" id="progress"></div>
-      <div class="circle active">1</div>
-      <div class="circle">2</div>
-      <div class="circle">3</div>
-      <div class="circle">4</div>
-      <div class="circle">5</div>
+    <div class="container">
+        <div class="progress-container">
+            <div class="progress" id="progress"></div>
+            <div class="circle active">1</div>
+            <div class="circle">2</div>
+            <div class="circle">3</div>
+            <div class="circle">4</div>
+            <div class="circle">5</div>
+        </div>
+        <button class="btn" id="prev" disabled>Prev</button>
+        <button class="btn" id="next">Next</button>
     </div>
-    <button class="btn" id="prev" disabled>Prev</button>
-    <button class="btn" id="next">Next</button>
-  </div>
 </Layout>
 
 <script is:inline>
-  const progress = document.getElementById("progress");
-  const prev = document.getElementById("prev");
-  const next = document.getElementById("next");
-  const circles = document.querySelectorAll(".circle");
+    const progress = document.getElementById('progress')
+    const prev = document.getElementById('prev')
+    const next = document.getElementById('next')
+    const circles = document.querySelectorAll('.circle')
 
-  let currentActive = 1;
+    let currentActive = 1
 
-  next.addEventListener("click", () => {
-    if (currentActive < circles.length) {
-      currentActive++;
+    next.addEventListener('click', () => {
+        if (currentActive < circles.length) {
+            currentActive++
+        }
+
+        updateProgress()
+    })
+
+    prev.addEventListener('click', () => {
+        if (currentActive > 1) {
+            currentActive--
+        }
+
+        updateProgress()
+    })
+
+    const updateProgress = () => {
+        circles.forEach((circle, index) => {
+            if (index < currentActive) {
+                circle.classList.add('active')
+            } else {
+                circle.classList.remove('active')
+            }
+        })
+
+        const actives = document.querySelectorAll('.active')
+
+        /* the "-1" in actives and circles length sets the correct width so that the progress line sits at the current active progress */
+        progress.style.width = `${
+            ((actives.length - 1) / (circles.length - 1)) * 100
+        }%`
+
+        if (currentActive === 1) {
+            prev.disabled = true
+        } else if (currentActive === circles.length) {
+            next.disabled = true
+        } else {
+            prev.disabled = false
+            next.disabled = false
+        }
     }
-
-    updateProgress();
-  });
-
-  prev.addEventListener("click", () => {
-    if (currentActive > 1) {
-      currentActive--;
-    }
-
-    updateProgress();
-  });
-
-  const updateProgress = () => {
-    circles.forEach((circle, index) => {
-      if (index < currentActive) {
-        circle.classList.add("active");
-      } else {
-        circle.classList.remove("active");
-      }
-    });
-
-    const actives = document.querySelectorAll(".active");
-
-    /* the "-1" in actives and circles length sets the correct width so that the progress line sits at the current active progress */
-    progress.style.width = `${
-      ((actives.length - 1) / (circles.length - 1)) * 100
-    }%`;
-
-    if (currentActive === 1) {
-      prev.disabled = true;
-    } else if (currentActive === circles.length) {
-      next.disabled = true;
-    } else {
-      prev.disabled = false;
-      next.disabled = false;
-    }
-  };
 </script>

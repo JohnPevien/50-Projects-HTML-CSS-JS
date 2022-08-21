@@ -1,206 +1,207 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from '../../layouts/Layout.astro'
 ---
 
 <Layout title="Rotating Navigation">
-  <div class="container">
-    <div class="circle-container">
-      <div class="circle">
-        <button id="close">
-          <i class="fas fa-times"></i>
-        </button>
-        <button id="open">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
+    <div class="container">
+        <div class="circle-container">
+            <div class="circle">
+                <button id="close">
+                    <i class="fas fa-times"></i>
+                </button>
+                <button id="open">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>Awesome article</h1>
+            <small>Chikoy Laguindam</small>
+
+            <img
+                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                alt="body of water surrounded by trees"
+            />
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
+                debitis accusantium deleniti laboriosam odio incidunt quam
+                quidem nemo culpa mollitia id eaque optio, iste velit quibusdam
+                magnam molestiae quisquam dolor deserunt voluptate commodi
+                autem, reiciendis molestias obcaecati. Quia sapiente aspernatur
+                nobis sed id amet. Eius, excepturi cumque. Praesentium, in!
+                Quaerat saepe ipsa repellat sed. Maiores, nisi et hic commodi
+                placeat amet obcaecati sed minus dolor. Impedit quidem, cumque
+                voluptatum quasi voluptatibus natus ratione accusantium enim
+                iusto laborum quos molestiae fugit accusamus tempora eligendi
+                eum ipsum consectetur, esse possimus ea sequi. Fugiat laborum
+                harum assumenda ad ab hic explicabo tenetur reprehenderit.
+            </p>
+        </div>
     </div>
 
-    <div class="content">
-      <h1>Awesome article</h1>
-      <small>Chikoy Laguindam</small>
-
-      <img
-        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-        alt="body of water surrounded by trees"
-      />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi debitis
-        accusantium deleniti laboriosam odio incidunt quam quidem nemo culpa
-        mollitia id eaque optio, iste velit quibusdam magnam molestiae quisquam
-        dolor deserunt voluptate commodi autem, reiciendis molestias obcaecati.
-        Quia sapiente aspernatur nobis sed id amet. Eius, excepturi cumque.
-        Praesentium, in! Quaerat saepe ipsa repellat sed. Maiores, nisi et hic
-        commodi placeat amet obcaecati sed minus dolor. Impedit quidem, cumque
-        voluptatum quasi voluptatibus natus ratione accusantium enim iusto
-        laborum quos molestiae fugit accusamus tempora eligendi eum ipsum
-        consectetur, esse possimus ea sequi. Fugiat laborum harum assumenda ad
-        ab hic explicabo tenetur reprehenderit.
-      </p>
-    </div>
-  </div>
-
-  <nav>
-    <ul>
-      <li><i class="fas fa-home"></i> Home</li>
-      <li><i class="fas fa-user-alt"></i> About</li>
-      <li><i class="fas fa-envelope"></i> Contact</li>
-    </ul>
-  </nav>
+    <nav>
+        <ul>
+            <li><i class="fas fa-home"></i> Home</li>
+            <li><i class="fas fa-user-alt"></i> About</li>
+            <li><i class="fas fa-envelope"></i> Contact</li>
+        </ul>
+    </nav>
 </Layout>
 
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-  * {
-    box-sizing: border-box;
-  }
+    * {
+        box-sizing: border-box;
+    }
 
-  body {
-    font-family: "Roboto", sans-serif;
-    overflow-x: hidden; /*to avoid scrollbars*/
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    background-color: #333;
-    color: #222;
-  }
+    body {
+        font-family: 'Roboto', sans-serif;
+        overflow-x: hidden; /*to avoid scrollbars*/
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        background-color: #333;
+        color: #222;
+    }
 
-  .container {
-    background-color: #fafafa;
-    transform-origin: top left;
-    transition: transform 0.5s linear;
-    width: 100vw;
-    min-height: 100vh;
-    padding: 50px;
-  }
+    .container {
+        background-color: #fafafa;
+        transform-origin: top left;
+        transition: transform 0.5s linear;
+        width: 100vw;
+        min-height: 100vh;
+        padding: 50px;
+    }
 
-  .container.show-nav {
-    transform: rotate(-20deg);
-  }
+    .container.show-nav {
+        transform: rotate(-20deg);
+    }
 
-  .circle-container {
-    position: fixed;
-    top: -100px;
-    left: -100px;
-  }
+    .circle-container {
+        position: fixed;
+        top: -100px;
+        left: -100px;
+    }
 
-  .circle {
-    background-color: #ff7979;
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    position: relative;
-    transition: transform 0.5s linear;
-  }
+    .circle {
+        background-color: #ff7979;
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        position: relative;
+        transition: transform 0.5s linear;
+    }
 
-  .container.show-nav .circle {
-    transform: rotate(-70deg);
-  }
+    .container.show-nav .circle {
+        transform: rotate(-70deg);
+    }
 
-  .circle button {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    height: 100px;
-    background: transparent;
-    border: 0;
-    font-size: 26px;
-    color: #fff;
-  }
+    .circle button {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 100px;
+        background: transparent;
+        border: 0;
+        font-size: 26px;
+        color: #fff;
+    }
 
-  .circle button:focus {
-    outline: none;
-  }
+    .circle button:focus {
+        outline: none;
+    }
 
-  .circle button#open {
-    left: 60%;
-  }
+    .circle button#open {
+        left: 60%;
+    }
 
-  .circle button#close {
-    top: 60%;
-    transform: rotate(90deg);
-    transform-origin: top left;
-  }
+    .circle button#close {
+        top: 60%;
+        transform: rotate(90deg);
+        transform-origin: top left;
+    }
 
-  .container.show-nav + nav li {
-    transform: translateX(0);
-    transition-delay: 0.3s;
-  }
+    .container.show-nav + nav li {
+        transform: translateX(0);
+        transition-delay: 0.3s;
+    }
 
-  small {
-    display: block;
-    margin-bottom: 2rem;
-  }
+    small {
+        display: block;
+        margin-bottom: 2rem;
+    }
 
-  nav {
-    position: fixed;
-    bottom: 40px;
-    left: 0;
-    z-index: 100;
-  }
+    nav {
+        position: fixed;
+        bottom: 40px;
+        left: 0;
+        z-index: 100;
+    }
 
-  nav ul {
-    list-style-type: none;
-    padding-left: 30px;
-  }
+    nav ul {
+        list-style-type: none;
+        padding-left: 30px;
+    }
 
-  nav ul li {
-    text-transform: uppercase;
-    color: #fff;
-    margin: 40px 0;
-    transform: translateX(-100%);
-    transition: transform 0.4s ease-in;
-  }
+    nav ul li {
+        text-transform: uppercase;
+        color: #fff;
+        margin: 40px 0;
+        transform: translateX(-100%);
+        transition: transform 0.4s ease-in;
+    }
 
-  nav ul li i {
-    font-size: 20px;
-    margin-right: 10px;
-  }
+    nav ul li i {
+        font-size: 20px;
+        margin-right: 10px;
+    }
 
-  nav ul li + li {
-    margin-left: 15px;
-    transform: translateX(-150%);
-  }
+    nav ul li + li {
+        margin-left: 15px;
+        transform: translateX(-150%);
+    }
 
-  nav ul li + li + li {
-    margin-left: 30px;
-  }
+    nav ul li + li + li {
+        margin-left: 30px;
+    }
 
-  .content img {
-    max-width: 100%;
-    width: 100%;
-  }
-  .content {
-    max-width: 1000px;
-    margin: 50px auto;
-  }
+    .content img {
+        max-width: 100%;
+        width: 100%;
+    }
+    .content {
+        max-width: 1000px;
+        margin: 50px auto;
+    }
 
-  .content h1 {
-    margin: 0;
-  }
+    .content h1 {
+        margin: 0;
+    }
 
-  .content small {
-    color: 3555;
-    font-style: italic;
-  }
+    .content small {
+        color: 3555;
+        font-style: italic;
+    }
 
-  .content p {
-    color: #333;
-    line-height: 1.5;
-  }
+    .content p {
+        color: #333;
+        line-height: 1.5;
+    }
 </style>
 
 <script is:inline>
-  const open = document.getElementById("open");
-  const close = document.getElementById("close");
-  const container = document.querySelector(".container");
+    const open = document.getElementById('open')
+    const close = document.getElementById('close')
+    const container = document.querySelector('.container')
 
-  open.addEventListener("click", () => {
-    container.classList.add("show-nav");
-  });
+    open.addEventListener('click', () => {
+        container.classList.add('show-nav')
+    })
 
-  close.addEventListener("click", () => {
-    container.classList.remove("show-nav");
-  });
+    close.addEventListener('click', () => {
+        container.classList.remove('show-nav')
+    })
 </script>

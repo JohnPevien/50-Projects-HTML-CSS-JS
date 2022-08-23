@@ -1,0 +1,79 @@
+---
+import Layout from '../../layouts/Layout.astro'
+---
+
+<Layout title="Blurry Loading">
+    <section class="bg"></section>
+    <div class="loading-text">0%</div>
+</Layout>
+<script is:inline>
+    const bg = document.querySelector('.bg')
+    const loadingText = document.querySelector('.loading-text')
+
+    let load = 0
+    let opacityVal = 100
+
+    /**
+     * https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers
+     */
+
+    const scale = (number, inMin, inMax, outMin, outMax) => {
+        return ((number - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin
+    }
+
+    const blurring = () => {
+        load++
+        if (load > 99) {
+            clearInterval(interval) /*remove interval once 100 is reached */
+        }
+
+        loadingText.innerText = `${load}%`
+        loadingText.style.opacity = `${scale(load, 0, 100, 1, 0)}`
+        bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`
+    }
+
+    let interval = setInterval(
+        blurring,
+        20
+    ) /*create an interval that runs the function every 30ms */
+</script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Ubuntu', sans-serif;
+        display: flex; /*used since most projects are centered*/
+        margin: 0;
+        height: 100vh; /*to make the height same as the the current whole browser size*
+  overflow: hidden; /*to avoid scrollbars*/
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bg {
+        background-image: url('https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1492&q=80');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+        filter: blur(0px);
+    }
+
+    .loading-text {
+        font-size: 70px;
+        color: #222;
+        z-index: 3;
+    }
+</style>

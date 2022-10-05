@@ -2,7 +2,8 @@
 
 ## 📝 Project Description
 
-A collection of projects I created from [50 Projects In 50 Days - HTML, CSS & JavaScript](https://www.udemy.com/course/50-projects-50-days/) udemy course.
+A collection of projects I created from [50 Projects In 50 Days - HTML, CSS & JavaScript](https://www.udemy.com/course/50-projects-50-days/) udemy course with a twist. All projects have their own their own counterpart which are built with TailwindCSS
+
 
 Built with ♥️ using [Astro](https://astro.build)
 

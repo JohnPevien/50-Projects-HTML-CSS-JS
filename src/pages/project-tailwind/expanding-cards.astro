@@ -1,0 +1,91 @@
+---
+import Layout from 'src/layouts/LayoutTailwind.astro'
+const panels = [
+    {
+        title: 'The Deep Forest',
+        background:
+            'https://images.unsplash.com/photo-1588392382834-a891154bca4d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    },
+    {
+        title: 'The Giant Tree',
+        background:
+            'https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    },
+    {
+        title: 'The Sunset',
+        background:
+            'https://images.unsplash.com/photo-1500534623283-312aade485b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    },
+    {
+        title: 'The Snowy Mountains',
+        background:
+            'https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    },
+    {
+        title: 'The Big Lake',
+        background:
+            'https://images.unsplash.com/photo-1552083375-1447ce886485?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    },
+]
+---
+
+<Layout title="Tailwind - Expanding Cards">
+    <section class="h-screen w-screen flex items-center justify-center">
+        <div
+            class="w-11/12 flex flex-row items-center justify-center sm:w-screen"
+        >
+            {
+                panels.map((panel, index) => {
+                    if (index > 2) {
+                        return (
+                            <div
+                                class={`js-panel w-full  bg-cover bg-center bg-no-repeat h-[80vh] rounded-lg cursor-pointer text-white grow-[0.5] shrink basis-[0%] m-2 relative transition-[flex] ease-in duration-700 hidden md:block`}
+                                style={`
+          background-image: url(${panel.background});
+                    `}
+                            >
+                                <h3 class="absolute text-2xl bottom-[20px] left-[20px]">
+                                    {panel.title}
+                                </h3>
+                            </div>
+                        )
+                    }
+                    return (
+                        <div
+                            class={`js-panel w-full  bg-cover bg-center bg-no-repeat h-[80vh] rounded-lg cursor-pointer text-white grow-[0.5] shrink basis-[0%] m-2 relative transition-[flex] ease-in duration-700`}
+                            style={`
+          background-image: url(${panel.background});
+                    `}
+                        >
+                            <h3 class="absolute text-2xl bottom-[20px] left-[20px]">
+                                {panel.title}
+                            </h3>
+                        </div>
+                    )
+                })
+            }
+        </div>
+    </section>
+</Layout>
+
+<style>
+    .active {
+        flex: 5; /*make the active panel biger*/
+    }
+</style>
+
+<script is:inline>
+    const panels = document.querySelectorAll('.js-panel')
+    panels.forEach((panel) => {
+        panel.addEventListener('click', () => {
+            removeActiveClasses()
+            panel.classList.add('active')
+        })
+    })
+
+    function removeActiveClasses() {
+        panels.forEach((panel) => {
+            panel.classList.remove('active')
+        })
+    }
+</script>

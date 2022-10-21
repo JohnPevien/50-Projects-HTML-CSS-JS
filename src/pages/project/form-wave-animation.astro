@@ -1,0 +1,152 @@
+---
+import Layout from '../../layouts/Layout.astro'
+---
+
+<Layout title="Form with Wave Animation Labels">
+    <div class="container">
+        <form>
+            <h2>Login</h2>
+            <div class="form-control">
+                <input type="text" name="email" required />
+                <label for="email">Email</label>
+            </div>
+            <div class="form-control">
+                <input type="password" name="password" required />
+                <label for="email">Password</label>
+            </div>
+
+            <button class="btn"> Login</button>
+            <p class="text">
+                Don't have an account? <a href="#">Register here.</a>
+            </p>
+        </form>
+    </div>
+</Layout>
+
+<script is:inline>
+    const labels = document.querySelectorAll('.form-control label')
+
+    labels.forEach((label) => {
+        label.innerHTML = label.innerText
+            .split('')
+            .map(
+                (letter, index) =>
+                    `<span style="transition-delay:${
+                        index * 80
+                    }ms">${letter}</span>`
+            )
+            .join('')
+    })
+</script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        display: flex; /*used since most projects are centered*/
+        margin: 0;
+        height: 100vh; /*to make the height same as the the current whole browser size*
+  overflow: hidden; /*to avoid scrollbars*/
+        justify-content: center;
+        align-items: center;
+        background-color: #7de5ed;
+    }
+
+    .container {
+        background-color: #5da7db;
+        padding: 2rem 4rem;
+        border-radius: 0.5rem;
+    }
+
+    .container h2 {
+        text-align: center;
+        color: #fff;
+        margin-bottom: 1rem;
+    }
+
+    .container a {
+        color: #5837d0;
+        text-decoration: none;
+    }
+
+    .form-control {
+        position: relative;
+        margin-block: 1rem;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .form-control label {
+        color: #fff;
+        font-size: 0.8rem;
+    }
+
+    .form-control input {
+        background-color: transparent;
+        border: 0;
+        border-bottom: 2px solid #fff;
+        padding-block: 0.5rem;
+        display: block;
+        font-size: 1.1rem;
+        font-family: inherit;
+        color: #fff;
+    }
+
+    .form-control input:focus,
+    .form-control input:valid {
+        outline: 0;
+    }
+
+    .btn {
+        cursor: pointer;
+        display: inline-block;
+        width: 100%;
+        background-color: #5837d0;
+        padding: 0.8rem;
+        font-family: inherit;
+        font-size: 1rem;
+        color: #fff;
+        border: 0;
+        border-radius: 0.5rem;
+        transition: all 0.1s ease;
+    }
+
+    .btn:active {
+        transform: scale(0.98);
+    }
+
+    .btn:focus {
+        outline: 0;
+    }
+
+    .text {
+        text-align: center;
+        color: #fff;
+        margin-top: 2.5rem;
+    }
+
+    .form-control label {
+        position: absolute;
+        top: 0.5rem;
+        left: 0;
+    }
+</style>
+
+<style is:global>
+    .form-control label span {
+        display: inline-block;
+        font-size: 1.1rem;
+        min-width: 5px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .form-control input:focus + label span,
+    .form-control input:valid + label span {
+        transform: translateY(-1.4rem);
+    }
+</style>

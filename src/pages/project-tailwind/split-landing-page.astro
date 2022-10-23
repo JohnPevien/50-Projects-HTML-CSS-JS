@@ -5,7 +5,7 @@ import Layout from 'src/layouts/LayoutTailwind.astro'
 <Layout title="Split Landing Page">
     <div class="relative w-full h-screen bg-gray-900">
         <div
-            class="absolute left-0 w-1/2 h-screen split overflow-hidden left-column"
+            class="absolute left-0 w-1/2 h-screen split overflow-hidden left-column transition-all duration-500 ease-in-out"
         >
             <h1
                 class="absolute text-6xl text-white left-1/2 top-1/4 translate-x-[-50%] font-bold w-3/4 text-center"
@@ -14,12 +14,12 @@ import Layout from 'src/layouts/LayoutTailwind.astro'
             </h1>
             <a
                 href="#"
-                class="absolute text-2xl text-white left-1/2 top-[40%] translate-x-[-50%] border-width-2 px-12 py-5 border-2 hover:bg-violet-700 hover:text-white hover:border-violet-700 uppercase font-semibold"
+                class="absolute text-2xl text-white left-1/2 top-[40%] translate-x-[-50%] border-width-2 border-2 p-6 w-60 text-center hover:bg-violet-700 hover:text-white hover:border-violet-700 uppercase font-semibold"
                 >Buy Now</a
             >
         </div>
         <div
-            class="absolute right-0 w-1/2 h-screen overflow-hidden right-column"
+            class="absolute right-0 w-1/2 h-screen overflow-hidden right-column transition-all duration-500 ease-in-out"
         >
             <h1
                 class="absolute text-6xl text-white left-1/2 top-1/4 translate-x-[-50%] font-bold w-3/4 text-center"
@@ -28,12 +28,37 @@ import Layout from 'src/layouts/LayoutTailwind.astro'
             </h1>
             <a
                 href="#"
-                class="absolute text-2xl text-white left-1/2 top-[40%] translate-x-[-50%] border-width-2 px-12 py-5 border-2 hover:bg-green-700 hover:text-white hover:border-green-700 uppercase font-semibold"
+                class="absolute text-2xl text-white left-1/2 top-[40%] translate-x-[-50%] border-width-2 border-2 p-6 w-60 text-center hover:bg-green-700 hover:text-white hover:border-green-700 uppercase font-semibold"
                 >Buy Now</a
             >
         </div>
     </div>
 </Layout>
+
+<script is:inline>
+    const leftColumn = document.querySelector('.left-column')
+    const rightColumn = document.querySelector('.right-column')
+
+    leftColumn.addEventListener('mouseenter', (e) => {
+        leftColumn.classList.add('w-2/3')
+        rightColumn.classList.add('w-1/3')
+    })
+
+    leftColumn.addEventListener('mouseleave', (e) => {
+        leftColumn.classList.remove('w-2/3')
+        rightColumn.classList.remove('w-1/3')
+    })
+
+    rightColumn.addEventListener('mouseenter', (e) => {
+        rightColumn.classList.add('w-2/3')
+        leftColumn.classList.add('w-1/3')
+    })
+
+    rightColumn.addEventListener('mouseleave', (e) => {
+        rightColumn.classList.remove('w-2/3')
+        leftColumn.classList.remove('w-1/3')
+    })
+</script>
 
 <style>
     .left-column::before {

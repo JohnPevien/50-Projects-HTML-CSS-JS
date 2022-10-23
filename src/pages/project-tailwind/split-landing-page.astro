@@ -1,0 +1,36 @@
+---
+import Layout from 'src/layouts/LayoutTailwind.astro'
+---
+
+<Layout title="Split Landing Page">
+    <div class="relative w-full h-screen bg-gray-900">
+        <div
+            class="absolute left-0 w-1/2 h-screen split overflow-hidden bg-[url('/ps.jpg')]"
+        >
+            <h1
+                class="absolute text-2xl text-white left-1/2 top-1/4 translate-x-[-50%]"
+            >
+                Playstation 5
+            </h1>
+            <a
+                href="#"
+                class="absolute text-2xl text-white left-1/2 top-[40%] translate-x-[-50%] border-width-2 px-6 py-3 border-2"
+                >Buy Now</a
+            >
+        </div>
+        <div
+            class="absolute right-0 w-1/2 h-screen overflow-hidden bg-[url('/xbox.jpg')]"
+        >
+            <h1
+                class="absolute text-2xl text-white left-1/2 top-1/4 translate-x-[-50%]"
+            >
+                XBox Series X
+            </h1>
+            <a
+                href="#"
+                class="absolute text-2xl text-white left-1/2 top-[40%] translate-x-[-50%] border-width-2 px-6 py-3 border-2"
+                >Buy Now</a
+            >
+        </div>
+    </div>
+</Layout>

@@ -5,32 +5,64 @@ import Layout from 'src/layouts/LayoutTailwind.astro'
 <Layout title="Split Landing Page">
     <div class="relative w-full h-screen bg-gray-900">
         <div
-            class="absolute left-0 w-1/2 h-screen split overflow-hidden bg-[url('/ps.jpg')]"
+            class="absolute left-0 w-1/2 h-screen split overflow-hidden left-column"
         >
             <h1
-                class="absolute text-2xl text-white left-1/2 top-1/4 translate-x-[-50%]"
+                class="absolute text-6xl text-white left-1/2 top-1/4 translate-x-[-50%] font-bold w-3/4 text-center"
             >
                 Playstation 5
             </h1>
             <a
                 href="#"
-                class="absolute text-2xl text-white left-1/2 top-[40%] translate-x-[-50%] border-width-2 px-6 py-3 border-2"
+                class="absolute text-2xl text-white left-1/2 top-[40%] translate-x-[-50%] border-width-2 px-12 py-5 border-2 hover:bg-violet-700 hover:text-white hover:border-violet-700 uppercase font-semibold"
                 >Buy Now</a
             >
         </div>
         <div
-            class="absolute right-0 w-1/2 h-screen overflow-hidden bg-[url('/xbox.jpg')]"
+            class="absolute right-0 w-1/2 h-screen overflow-hidden right-column"
         >
             <h1
-                class="absolute text-2xl text-white left-1/2 top-1/4 translate-x-[-50%]"
+                class="absolute text-6xl text-white left-1/2 top-1/4 translate-x-[-50%] font-bold w-3/4 text-center"
             >
                 XBox Series X
             </h1>
             <a
                 href="#"
-                class="absolute text-2xl text-white left-1/2 top-[40%] translate-x-[-50%] border-width-2 px-6 py-3 border-2"
+                class="absolute text-2xl text-white left-1/2 top-[40%] translate-x-[-50%] border-width-2 px-12 py-5 border-2 hover:bg-green-700 hover:text-white hover:border-green-700 uppercase font-semibold"
                 >Buy Now</a
             >
         </div>
     </div>
 </Layout>
+
+<style>
+    .left-column::before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+                to right,
+                rgba(87, 84, 236, 0.7),
+                rgba(87, 84, 236, 0.7)
+            ),
+            url('/ps.jpg');
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .right-column::before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+                to right,
+                rgba(43, 43, 43, 0.8),
+                rgba(43, 43, 43, 0.8)
+            ),
+            url('/xbox.jpg');
+        background-size: cover;
+        background-position: center center;
+    }
+</style>

@@ -1,0 +1,84 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Split Landing Page">
+    <audio id="applause" src="/sounds/applause.mp3" preload="auto"></audio>
+    <audio id="boo" src="/sounds/boo.mp3" preload="auto"></audio>
+    <audio id="gasp" src="/sounds/gasp.mp3" preload="auto"></audio>
+    <audio id="tada" src="/sounds/tada.mp3" preload="auto"></audio>
+    <audio id="victory" src="/sounds/victory.mp3" preload="auto"></audio>
+    <audio id="wrong" src="/sounds/wrong.mp3" preload="auto"></audio>
+
+    <div id="buttons"></div>
+</Layout>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        height: 100vh;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    #buttons {
+        background-color: rgb(161, 100, 223);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+        margin: 0;
+    }
+</style>
+
+<style is:global>
+    .btn {
+        background-color: #18e092;
+        border-radius: 3px;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+        border: none;
+        color: #fff;
+        padding: 1.5rem 3rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .btn:active {
+        transform: translateY(-3px) scale(1.05);
+    }
+</style>
+
+<script is:inline>
+    const sounds = ['applause', 'boo', 'gasp', 'tada', 'victory', 'wrong'];
+
+    sounds.forEach((sound) => {
+        const btn = document.createElement('button');
+        btn.classList.add('btn');
+        btn.innerText = sound;
+
+        btn.addEventListener('click', () => {
+            stopSounds();
+            document.getElementById(sound).play();
+        });
+
+        document.getElementById('buttons').appendChild(btn);
+    });
+
+    // to prevent audio from overlapping each other
+    function stopSounds() {
+        sounds.forEach((sound) => {
+            const currentSound = document.getElementById(sound);
+
+            currentSound.pause();
+            currentSound.currentTime = 0;
+        });
+    }
+</script>

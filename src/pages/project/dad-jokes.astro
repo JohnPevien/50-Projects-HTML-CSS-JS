@@ -60,7 +60,7 @@ import Layout from '../../layouts/Layout.astro';
     .joke {
         font-size: 3rem;
         font-weight: 500;
-        line-height: 2.4rem;
+        line-height: 4.5rem;
         margin: 5rem auto;
         width: min(60rem, 100%);
     }
@@ -92,4 +92,25 @@ import Layout from '../../layouts/Layout.astro';
     }
 </style>
 
-<script is:inline></script>
+<script is:inline>
+    const jokeContainer = document.getElementById('joke');
+    const jokeBtn = document.getElementById('jokeBtn');
+    const generateJoke = () => {
+        const config = {
+            headers: {
+                Accept: 'application/json',
+            },
+        };
+
+        fetch('https://icanhazdadjoke.com', config)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                jokeContainer.innerHTML = `"${data.joke}"`;
+            });
+    };
+
+    jokeBtn.addEventListener('click', generateJoke);
+
+    window.onload = generateJoke;
+</script>

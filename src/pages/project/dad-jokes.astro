@@ -105,7 +105,6 @@ import Layout from '../../layouts/Layout.astro';
         fetch('https://icanhazdadjoke.com', config)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
                 jokeContainer.innerHTML = `"${data.joke}"`;
             });
     };

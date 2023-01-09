@@ -21,3 +21,56 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`      | Preview your build locally, before deploying       |
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
 | `npm run astro --help` | Get help using the Astro CLI                       |
+
+# List of Projects
+
+1.  [x] Expanding Cards
+2.  [x] Progress Steps
+3.  [x] Rotating Navigation
+4.  [x] Hidden Search Widget
+5.  [x] Blurry Loading
+6.  [x] Scroll Animation
+7.  [x] Split Landing Page
+8.  [x] Form Wave Animation
+9.  [x] Sound board
+10. [x] Dad Jokes
+11. [x] Event KeyCodes
+12. [ ] FAQ Collapse
+13. [ ] Random Choice Picker
+14. [ ] Animated Navigation
+15. [ ] Incrementing Counter
+16. [ ] Drink Water
+17. [ ] Movie App
+18. [ ] Background Slider
+19. [ ] Theme Clock
+20. [ ] Button Ripple Effect
+21. [ ] Drag N Drop
+22. [ ] Drawing App
+23. [ ] Kinetic CSS Loader
+24. [ ] Contenct Placeholder
+25. [ ] Sticky Navbar
+26. [ ] Double Vertical Slider
+27. [ ] Toast Notifaction
+28. [ ] Github Profiles
+29. [ ] Double Heart Click
+30. [ ] Auto Text Effect
+31. [ ] Password Generator
+32. [ ] Good, Cheap, Fast Checkboxes
+33. [ ] Notes App
+34. [ ] Animated Countdown
+35. [ ] Image carousel
+36. [ ] Hoverboard
+37. [ ] Pokedex
+38. [ ] Mobile Tab Navigation
+39. [ ] Password Strength Background
+40. [ ] 3D Background Boxes
+41. [ ] Verify Accounnt UI
+42. [ ] Live User Filter
+43. [ ] Feedback UI Design
+44. [ ] Custom Range Slider
+45. [ ] Netflix Navigation
+46. [ ] Quiz App
+47. [ ] Testimonial Box Switcher
+48. [ ] Random Image Feed
+49. [ ] Todo List
+50. [ ] Insect Catch Game

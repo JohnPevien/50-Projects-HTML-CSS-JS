@@ -24,17 +24,17 @@ All commands are run from the root of the project, from a terminal:
 
 # List of Projects
 
-1.  [x] Expanding Cards
-2.  [x] Progress Steps
-3.  [x] Rotating Navigation
-4.  [x] Hidden Search Widget
-5.  [x] Blurry Loading
-6.  [x] Scroll Animation
-7.  [x] Split Landing Page
-8.  [x] Form Wave Animation
-9.  [x] Sound board
-10. [x] Dad Jokes
-11. [x] Event KeyCodes
+1.  [x] [Expanding Cards](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/expanding-cards.astro)
+2.  [x] [Progress Steps](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/progress-steps.astro)
+3.  [x] [Rotating Navigation](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/rotating-navigation.astro)
+4.  [x] [Hidden Search Widget](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/hidden-search-widget.astro)
+5.  [x] [Blurry Loading](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/blurry-loading.astro)
+6.  [x] [Scroll Animation](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/scrolling-animation.astro)
+7.  [x] [Split Landing Page](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/split-landing-page.astro)
+8.  [x] [Form Wave Animation](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/form-wave-animation.astro)
+9.  [x] [Sound board](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/soundboard.astro)
+10. [x] [Dad Jokes](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/dad-jokes.astro)
+11. [x] [Event KeyCodes](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/keycode.astro)
 12. [ ] FAQ Collapse
 13. [ ] Random Choice Picker
 14. [ ] Animated Navigation

@@ -1,0 +1,184 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<style is:inline>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    * {
+        box-sizing: border-box;
+    }
+
+    :root {
+        --line-border-fill: #3498db;
+        --line-border-empty: #e0e0e0;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        display: flex; /*used since most projects are centered*/
+        margin: 0;
+        height: 100vh; /*to make the height same as the the current whole browser size*/
+        overflow: hidden; /*to avoid scrollbars*/
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+        flex-direction: column;
+    }
+
+    h1 {
+        margin: 50px 0 30px;
+        text-align: center;
+        font-size: 32px;
+    }
+
+    .faq-container {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .faq {
+        background-color: transparent;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        margin: 20px 0;
+        padding: 30px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .faq.active {
+        background: linear-gradient(90deg, #3498dbd3, #db34c557);
+        border: 1px solid #3498db;
+    }
+
+    .faq-title {
+        margin: 0 35px 0 0;
+    }
+
+    .faq.active .faq-title {
+        color: #fff;
+    }
+
+    .faq-text {
+        display: none;
+        margin: 30px 0 0;
+        color: #fff;
+        line-height: 1.4;
+    }
+
+    .faq.active .faq-text {
+        display: block;
+    }
+
+    .faq-toggle {
+        all: unset;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        background-color: #3498db;
+        cursor: pointer;
+    }
+
+    .faq-toggle i {
+        padding-top: 1px;
+        color: #fff;
+        font-size: 16px;
+    }
+
+    .faq.active .faq-toggle {
+        background-color: #db34c5;
+    }
+
+    .faq-toggle .fa-times {
+        display: none;
+    }
+    .faq.active .faq-toggle .fa-times {
+        display: block;
+    }
+
+    .faq.active .faq-toggle .fa-chevron-down {
+        display: none;
+    }
+</style>
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous"
+    referrerPolicy="no-referrer"
+/>
+
+<Layout title="FAQ Accordion">
+    <h1>Frequently Asked Questions</h1>
+    <div class="faq-container">
+        <div class="faq">
+            <h3 class="faq-title">What is the meaning of life?</h3>
+            <p class="faq-text">
+                This question has been pondered by humans for centuries. While
+                there is no single answer that applies to everyone, many
+                philosophers and thinkers believe that the meaning of life is to
+                find personal fulfillment, happiness, and contribute to the
+                greater good of society.
+            </p>
+            <button class="faq-toggle">
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="faq">
+            <h3 class="faq-title">What is artificial intelligence (AI)</h3>
+            <p class="faq-text">
+                AI is the development of computer systems that can perform tasks
+                that typically require human intelligence, such as visual
+                perception, speech recognition, decision-making, and language
+                translation. AI is a rapidly growing field and is used in a wide
+                range of applications, from virtual assistants to self-driving
+                cars.
+            </p>
+            <button class="faq-toggle">
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="faq">
+            <h3 class="faq-title">
+                How do I protect my personal information online?
+            </h3>
+            <p class="faq-text">
+                In today's digital age, it is essential to protect your personal
+                information online. Some tips include using strong, unique
+                passwords for each account, enabling two-factor authentication,
+                avoiding public Wi-Fi for sensitive transactions, and being
+                cautious when sharing personal information on social media
+                platforms.
+            </p>
+            <button class="faq-toggle">
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+</Layout>
+
+<script is:inline>
+    const buttons = document.querySelectorAll('.faq-toggle');
+
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            console.log(button.parentNode);
+            button.parentNode.classList.toggle('active');
+        });
+    });
+</script>

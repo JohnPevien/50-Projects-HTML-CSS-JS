@@ -2,8 +2,7 @@
 
 ## 📝 Project Description
 
-50 projects built mainly using HTML, CSS and JS.
-Projects are also translated on how it would be built using TailwindCSS.
+50 projects built mainly using HTML, CSS and Vanilla JS.
 
 Compiled into one site using [Astro](https://astro.build) ♥️
 
@@ -35,7 +34,7 @@ All commands are run from the root of the project, from a terminal:
 9.  [x] [Sound board](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/soundboard.astro)
 10. [x] [Dad Jokes](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/dad-jokes.astro)
 11. [x] [Event KeyCodes](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/keycode.astro)
-12. [ ] FAQ Collapse
+12. [x] [FAQ Collapse](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/faq.astro)
 13. [ ] Random Choice Picker
 14. [ ] Animated Navigation
 15. [ ] Incrementing Counter

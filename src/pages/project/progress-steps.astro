@@ -1,5 +1,5 @@
 ---
-import Layout from '../../layouts/Layout.astro'
+import Layout from '../../layouts/Layout.astro';
 ---
 
 <style>
@@ -129,52 +129,52 @@ import Layout from '../../layouts/Layout.astro'
 </Layout>
 
 <script is:inline>
-    const progress = document.getElementById('progress')
-    const prev = document.getElementById('prev')
-    const next = document.getElementById('next')
-    const circles = document.querySelectorAll('.circle')
+    const progress = document.getElementById('progress');
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    const circles = document.querySelectorAll('.circle');
 
-    let currentActive = 1
+    let currentActive = 1;
 
     next.addEventListener('click', () => {
         if (currentActive < circles.length) {
-            currentActive++
+            currentActive++;
         }
 
-        updateProgress()
-    })
+        updateProgress();
+    });
 
     prev.addEventListener('click', () => {
         if (currentActive > 1) {
-            currentActive--
+            currentActive--;
         }
 
-        updateProgress()
-    })
+        updateProgress();
+    });
 
     const updateProgress = () => {
         circles.forEach((circle, index) => {
             if (index < currentActive) {
-                circle.classList.add('active')
+                circle.classList.add('active');
             } else {
-                circle.classList.remove('active')
+                circle.classList.remove('active');
             }
-        })
+        });
 
-        const actives = document.querySelectorAll('.active')
+        const actives = document.querySelectorAll('.active');
 
         /* the "-1" in actives and circles length sets the correct width so that the progress line sits at the current active progress */
         progress.style.width = `${
             ((actives.length - 1) / (circles.length - 1)) * 100
-        }%`
+        }%`;
 
         if (currentActive === 1) {
-            prev.disabled = true
+            prev.disabled = true;
         } else if (currentActive === circles.length) {
-            next.disabled = true
+            next.disabled = true;
         } else {
-            prev.disabled = false
-            next.disabled = false
+            prev.disabled = false;
+            next.disabled = false;
         }
-    }
+    };
 </script>

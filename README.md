@@ -35,8 +35,8 @@ All commands are run from the root of the project, from a terminal:
 10. [x] [Dad Jokes](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/dad-jokes.astro)
 11. [x] [Event KeyCodes](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/keycode.astro)
 12. [x] [FAQ Collapse](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/faq.astro)
-13. [x] Random Choice Picker(https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/random-choice-picker.astro)
-14. [ ] Animated Navigation
+13. [x] [Random Choice Picker](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/random-choice-picker.astro)
+14. [x] [Animated Navigation](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/animated-navigation.astro)
 15. [ ] Incrementing Counter
 16. [ ] Drink Water
 17. [ ] Movie App

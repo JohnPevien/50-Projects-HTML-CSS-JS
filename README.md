@@ -37,7 +37,7 @@ All commands are run from the root of the project, from a terminal:
 12. [x] [FAQ Collapse](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/faq.astro)
 13. [x] [Random Choice Picker](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/random-choice-picker.astro)
 14. [x] [Animated Navigation](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/animated-navigation.astro)
-15. [x] Incrementing Counter
+15. [x] [Incrementing Counter](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/increment-counter.astro)
 16. [ ] Drink Water
 17. [ ] Movie App
 18. [ ] Background Slider

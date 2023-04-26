@@ -1,0 +1,122 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<style is:inline>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Roboto Mono', sans-serif;
+        margin: 0;
+        height: 100vh; /*to make the height same as the the current whole browser size*/
+        display: flex; /*used since most projects are centered*/
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: #fff;
+        overflow: hidden;
+    }
+
+    .counters {
+        display: flex; /*used since most projects are centered*/
+        justify-content: center;
+        align-items: center;
+    }
+
+    .counter-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 2rem 3rem;
+        text-align: center;
+    }
+
+    .counter {
+        font-size: 3rem;
+        font-weight: 700;
+        margin: 1rem 0;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    .button button {
+        all: unset;
+        cursor: pointer;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        padding: 1rem;
+        border-radius: 5px;
+        box-shadow: 5px 5px 15px #00000081;
+    }
+
+    @media screen and (max-width: 580px) {
+        .counters {
+            flex-direction: column;
+        }
+    }
+</style>
+
+<Layout title="Increment Counter">
+    <div class="counters">
+        <div class="counter-container">
+            <i class="fab fa-twitter fa-6x"></i>
+            <div class="counter" data-target="12000">12000</div>
+            <span>Twitter Followers</span>
+        </div>
+        <div class="counter-container">
+            <i class="fab fa-youtube fa-6x"></i>
+            <div class="counter" data-target="5000">5000</div>
+            <span>Youtube Subscribers</span>
+        </div>
+        <div class="counter-container">
+            <i class="fab fa-facebook fa-6x"></i>
+            <div class="counter" data-target="7500">7500</div>
+            Facebook Fans
+        </div>
+    </div>
+
+    <div class="button">
+        <button type="button" id="runagain">Run again</button>
+    </div>
+</Layout>
+
+<script is:inline>
+    const counters = document.querySelectorAll('.counter');
+
+    const runCounter = () => {
+        counters.forEach((counter) => {
+            counter.innerText = '0';
+
+            const updateCounter = () => {
+                const target = Number(counter.getAttribute('data-target'));
+                const c = Number(counter.innerText);
+
+                const increment = target / 100;
+
+                if (c < target) {
+                    counter.innerText = `${Math.ceil(c + increment)}`;
+                    setTimeout(updateCounter, 1);
+                }
+            };
+
+            updateCounter();
+        });
+    };
+
+    runCounter();
+
+    const button = document.getElementById('runagain');
+    button.onclick = () => {
+        runCounter();
+    };
+</script>

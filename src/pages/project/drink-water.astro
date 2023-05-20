@@ -1,0 +1,65 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Drink Water">
+    <div class="container">
+        <h1>Drink Water</h1>
+        <h3>Goal: 2 Liters</h3>
+    </div>
+
+    <div class="cup">
+        <div class="remained" id="remained">
+            <span id="liters">1.5L</span>
+            <small>Remained</small>
+        </div>
+        <div class="percentage" id="percentage">20%</div>
+    </div>
+    <p class="text">Select how many glasses of water that you have drank</p>
+    <div class="cups">
+        <div class="cup cup-small full">250 ml</div>
+        <div class="cup cup-small full">250 ml</div>
+        <div class="cup cup-small full">250 ml</div>
+        <div class="cup cup-small full">250 ml</div>
+        <div class="cup cup-small full">250 ml</div>
+        <div class="cup cup-small full">250 ml</div>
+        <div class="cup cup-small full">250 ml</div>
+        <div class="cup cup-small full">250 ml</div>
+    </div>
+</Layout>
+
+<style>
+    :root {
+    }
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        font-size: 62.5%;
+    }
+
+    body {
+        background-color: #ba6bf0;
+        font-family: 'Roboto', sans-serif;
+        height: 100vh;
+        overflow: hidden;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-inline: 2rem;
+    }
+
+    .container {
+        background-color: #fff;
+        border-radius: 1rem;
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1),
+            0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        padding: 4rem 2rem;
+        width: min(80rem, 100%);
+        text-align: center;
+    }
+</style>
+
+<script is:inline></script>

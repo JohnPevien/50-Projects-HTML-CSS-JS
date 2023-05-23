@@ -38,8 +38,8 @@ All commands are run from the root of the project, from a terminal:
 13. [x] [Random Choice Picker](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/random-choice-picker.astro)
 14. [x] [Animated Navigation](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/animated-navigation.astro)
 15. [x] [Incrementing Counter](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/increment-counter.astro)
-16. [ ] Drink Water
-17. [ ] Movie App
+16. [x] [Drink Water](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/drink-water.astro)
+17. [x] [Movie App](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/movie-app.astro)
 18. [ ] Background Slider
 19. [ ] Theme Clock
 20. [ ] Button Ripple Effect

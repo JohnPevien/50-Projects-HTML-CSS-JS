@@ -9,7 +9,7 @@ import Layout from '../../layouts/Layout.astro';
         box-sizing: border-box;
     }
 
-    body {
+    .container {
         font-family: 'Roboto', sans-serif;
         display: flex; /*used since most projects are centered*/
         margin: 0;
@@ -50,7 +50,7 @@ import Layout from '../../layouts/Layout.astro';
     }
 
     nav.active {
-        width: 350px;
+        width: 380px;
     }
 
     nav.active ul {
@@ -114,18 +114,20 @@ import Layout from '../../layouts/Layout.astro';
 </style>
 
 <Layout title="Animated Navigation">
-    <nav class="active" id="nav">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Works</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        <button class="icon" id="toggle">
-            <div class="line line1"></div>
-            <div class="line line2"></div>
-        </button>
-    </nav>
+    <div class="container">
+        <nav class="active" id="nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Works</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <button class="icon" id="toggle">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+            </button>
+        </nav>
+    </div>
 </Layout>
 
 <script is:inline>

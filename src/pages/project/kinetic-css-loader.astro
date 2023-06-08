@@ -1,0 +1,94 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<style is:inline>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .container {
+        font-family: 'Roboto', sans-serif;
+        display: flex; /*used since most projects are centered*/
+        margin: 0;
+        height: 100vh; /*to make the height same as the the current whole browser size*/
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: #222;
+        background-color: #419fd9;
+    }
+
+    .kinetic {
+        position: relative;
+        height: 80px;
+        width: 80px;
+    }
+
+    .kinetic::after,
+    .kinetic::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        border: 50px solid transparent;
+        border-bottom-color: #fff;
+        animation: rotateA 4s linear infinite 1s;
+    }
+
+    .kinetic::before {
+        transform: rotate(90deg);
+        animation: rotateB 4s linear infinite;
+    }
+
+    @keyframes rotateA {
+        0%,
+        25% {
+            transform: rotate(0deg);
+        }
+
+        50%,
+        75% {
+            transform: rotate(180deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes rotateB {
+        0%,
+        25% {
+            transform: rotate(90deg);
+        }
+
+        50%,
+        75% {
+            transform: rotate(270deg);
+        }
+
+        100% {
+            transform: rotate(450deg);
+        }
+    }
+</style>
+
+<Layout title="Kinetic CSS Loader">
+    <div class="container">
+        <div class="kinetic"></div>
+    </div>
+</Layout>
+
+<script is:inline>
+    const toggle = document.getElementById('toggle');
+    const nav = document.getElementById('nav');
+
+    toggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+</script>

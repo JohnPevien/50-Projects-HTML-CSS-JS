@@ -19,7 +19,7 @@ import Layout from '../../layouts/Layout.astro';
     }
 
     .container {
-        width: min(1200, 100%);
+        width: min(1200px, 100%);
         margin: 0 auto;
     }
 
@@ -31,6 +31,27 @@ import Layout from '../../layouts/Layout.astro';
         right: 0;
         transition: all 0.3s ease-in-out;
         z-index: 99;
+        color: #fff;
+    }
+
+    .nav.active {
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        color: #000;
+    }
+
+    .nav.active a {
+        color: #000;
+    }
+
+    .nav.active .container {
+        padding: 10px 0;
+    }
+
+    .nav a.current,
+    .nav a:hover {
+        color: #c0392b;
+        font-weight: bold;
     }
 
     .nav .container {
@@ -96,7 +117,7 @@ import Layout from '../../layouts/Layout.astro';
     <div class="container">
         <h1 class="logo">NavBar</h1>
         <ul>
-            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#" class="current">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Contact</a></li>
@@ -163,59 +184,7 @@ import Layout from '../../layouts/Layout.astro';
         suscipit eius repellat odio tempora cupiditate, fugit cumque animi
         eligendi commodi nobis? Iure velit molestias, odit quas exercitationem
         culpa porro dolore molestiae nulla numquam, deleniti aliquam modi
-        deserunt quis consectetur minus? Obcaecati natus est ipsum nostrum eum
-        modi magni nemo facilis perspiciatis. Nostrum, perferendis quam.
-        Obcaecati maiores ea incidunt, modi consequuntur temporibus eveniet,
-        soluta nulla necessitatibus iusto omnis rerum ipsa quibusdam non?
-        Voluptatibus aspernatur labore excepturi ad reiciendis iusto sint
-        deserunt saepe? Deserunt veritatis incidunt porro ipsam. Vero excepturi
-        aliquid autem suscipit est inventore dolor dolorem delectus, ipsum at
-        beatae, natus eaque quae nisi! Tempore possimus doloremque eos tempora
-        fugiat animi quis? Odio quam aliquid incidunt libero accusamus vel fuga
-        maiores minus et nesciunt hic eveniet commodi quis ab temporibus,
-        voluptatibus provident quos suscipit reprehenderit sunt pariatur velit
-        est magni quas? Quis. Animi saepe exercitationem quisquam debitis
-        architecto non nihil excepturi modi facilis, quidem inventore deserunt
-        eligendi perferendis dolores magnam iste laborum a? Aliquid recusandae
-        ratione atque, quasi molestiae omnis amet incidunt. Accusamus nostrum
-        cupiditate perspiciatis a cumque? Harum unde eveniet et amet commodi,
-        laborum voluptate quo? Cum voluptatum eius quasi, veritatis laudantium
-        minus aperiam ex molestiae mollitia alias voluptas id reprehenderit!
-        Dolor quidem maiores amet iure aperiam neque, nobis illo! Minima
-        recusandae at odio, non ullam blanditiis quam quos veritatis
-        voluptatibus itaque est consequuntur, repudiandae vero ipsam rem! Dicta,
-        accusamus corrupti! Dignissimos ducimus quam, repellendus nisi hic,
-        molestias perferendis vero autem fugiat distinctio ipsum deserunt quia
-        suscipit aut, sed incidunt vitae dolor architecto eius? Omnis numquam
-        quo sint vero nulla vel? Blanditiis rerum, deleniti quod quam eum
-        architecto placeat neque accusantium inventore repellat doloremque!
-        Eveniet corrupti dolores consequatur mollitia voluptate reprehenderit
-        possimus, totam molestias voluptatibus id. Perspiciatis rerum eaque
-        minima. Ad! Aspernatur debitis perferendis qui id, illum porro assumenda
-        alias sunt et ipsa, quod, eum eos deserunt quo aut odio praesentium.
-        Aperiam aspernatur amet ipsam qui, corporis quae quos tempore expedita?
-        Recusandae ullam praesentium fugit. Id at, ullam alias totam in
-        voluptates saepe et, accusantium necessitatibus non distinctio dolor
-        modi eaque ex nemo vel, aliquam maxime dignissimos tempore aut labore!
-        Hic. Ipsa odit magni necessitatibus accusamus vero in dicta perferendis
-        illum facilis sed soluta tenetur tempora earum debitis dignissimos
-        laborum delectus saepe, maxime unde blanditiis? Quibusdam omnis atque
-        nemo explicabo ipsa. Atque cum in a dolor necessitatibus iure sapiente
-        repellendus. Sequi quis tempora aliquid harum quos eius voluptatibus
-        corrupti, modi consequuntur dolorem, quisquam ipsum dicta officia
-        repellat earum aperiam id dignissimos? Expedita nisi praesentium quam
-        quod a aliquid nemo nihil incidunt magnam dignissimos quaerat quae alias
-        aspernatur iste, repudiandae consectetur distinctio reiciendis placeat.
-        Unde necessitatibus explicabo eveniet cupiditate. Minus, ipsam iure!
-        Doloribus, perspiciatis ullam omnis consectetur corrupti temporibus
-        deserunt provident molestiae cupiditate harum et commodi doloremque
-        voluptas? Autem, nesciunt nobis impedit ex tenetur vero perspiciatis, et
-        facilis atque obcaecati vitae numquam! Quasi laudantium expedita
-        nesciunt incidunt quas blanditiis aut tempore iusto earum recusandae
-        esse doloremque odit vero, tenetur atque ipsum corrupti eligendi error
-        fugit quae? Natus maiores quo ullam. Provident, voluptate. Sapiente,
-        illum veritatis inventore reprehenderit, pariatur eius esse ad itaque
-        laboriosam ullam neque, a incidunt.
+        deserunt quis consectetur minus?
     </p>
 
     <h3>Content Two</h3>
@@ -243,4 +212,15 @@ import Layout from '../../layouts/Layout.astro';
     </p>
 </section>
 
-<script is:inline></script>
+<script is:inline>
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', fixNav);
+
+    function fixNav() {
+        if (window.scrollY > nav.offsetHeight + 150) {
+            nav.classList.add('active');
+        } else {
+            nav.classList.remove('active');
+        }
+    }
+</script>

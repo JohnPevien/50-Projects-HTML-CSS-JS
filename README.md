@@ -46,7 +46,7 @@ All commands are run from the root of the project, from a terminal:
 21. [x] [Drag N Drop](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/drag-and-drop.astro)
 22. [ ] Drawing App
 23. [x] [Kinetic CSS Loader](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/kinetic-css-loader.astro)
-24. [ ] Contenct Placeholder
+24. [x] [Content Placeholder](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/content-placeholder.astro)
 25. [x] [Sticky Navbar](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/sticky-navbar.astro)
 26. [ ] Double Vertical Slider
 27. [ ] Toast Notifaction

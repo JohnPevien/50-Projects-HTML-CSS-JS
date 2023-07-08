@@ -1,3 +1,7 @@
+---
+import Layout from 'src/layouts/Layout.astro';
+---
+
 <style is:inline>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
@@ -97,58 +101,57 @@
         border-bottom-right-radius: 5px;
     }
 </style>
-<div class="container">
-    <section class="slider-container">
-        <div class="left-slide">
+<Layout title="Vertical Slider">
+    <div class="container">
+        <section class="slider-container">
             <div class="left-slide">
-                <div style="background-color: #2e9b25">
+                <div style="background-color: #6BCD6B">
                     <h1>Rice Terraces</h1>
                     <p>in Philippines</p>
                 </div>
-                <div style="background-color: #131212">
+                <div style="background-color: #D66363">
                     <h1>Shibuya Crossing</h1>
                     <p>in Tokyo</p>
                 </div>
-                <div style="background-color: #f1ac5c">
+                <div style="background-color: #94C9D3">
                     <h1>Twin Peaks</h1>
                     <p>in El Nido, Palawan</p>
                 </div>
-                <div style="background-color: #0e64b4">
+                <div style="background-color: #6BB0D2">
                     <h1>Mount Fuji</h1>
                     <p>in Japan</p>
                 </div>
             </div>
-        </div>
-        <div class="right-slide">
-            <div
-                style="background-image: url('https://images.unsplash.com/photo-1590077211339-724573dc4121?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80')"
-            >
+            <div class="right-slide">
+                <div
+                    style="background-image: url('https://images.unsplash.com/photo-1590077211339-724573dc4121?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80')"
+                >
+                </div>
+                <div
+                    style="background-image: url('https://images.unsplash.com/photo-1586963312987-3c96f9ace15a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')"
+                >
+                </div>
+                <div
+                    style="background-image: url('https://images.unsplash.com/photo-1565113180093-077f1e8f1c74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80')"
+                >
+                </div>
+                <div
+                    style="background-image: url('https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')"
+                >
+                </div>
             </div>
-            <div
-                style="background-image: url('https://images.unsplash.com/photo-1586963312987-3c96f9ace15a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')"
-            >
+            <div class="action-buttons">
+                <button class="down-button">
+                    <i class="fas fa-arrow-down"></i>
+                </button>
+                <button class="up-button">
+                    <i class="fas fa-arrow-up"></i>
+                </button>
             </div>
-            <div
-                style="background-image: url('https://images.unsplash.com/photo-1565113180093-077f1e8f1c74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80')"
-            >
-            </div>
-            <div
-                style="background-image: url('https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')"
-            >
-            </div>
-        </div>
-        <div class="action-buttons">
-            <button class="down-button">
-                <i class="fas fa-arrow-down"></i>
-            </button>
-            <button class="up-button">
-                <i class="fas fa-arrow-up"></i>
-            </button>
-        </div>
-    </section>
-</div>
+        </section>
+    </div>
+</Layout>
 
-<script is:inline></script>
 <script is:inline>
     const sliderContainer = document.querySelector('.slider-container');
     const slideRight = document.querySelector('.right-slide');
@@ -160,9 +163,6 @@
     let activeSlideIndex = 0;
 
     slideLeft.style.top = `-${(slidesLength - 1) * 100}vh`;
-
-    upButton.addEvenetListener('click', () => changeSlide('up'));
-    downButton.addEvenetListener('click', () => changeSlide('down'));
 
     const changeSlide = (direction) => {
         const sliderHeight = sliderContainer.clientHeight;
@@ -181,9 +181,11 @@
         slideRight.style.transform = `translateY(-${
             activeSlideIndex * sliderHeight
         }px)`;
-
         slideLeft.style.transform = `translateY(${
             activeSlideIndex * sliderHeight
         }px)`;
     };
+
+    upButton.addEventListener('click', () => changeSlide('up'));
+    downButton.addEventListener('click', () => changeSlide('down'));
 </script>

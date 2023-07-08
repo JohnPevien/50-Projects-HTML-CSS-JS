@@ -1,0 +1,191 @@
+---
+import Layout from 'src/layouts/Layout.astro';
+---
+
+<style is:inline>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Open Sans', sans-serif;
+        height: 100vh;
+    }
+
+    .slider-container {
+        position: relative;
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .left-slide {
+        height: 100%;
+        width: 35%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .left-slide > div {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+    }
+
+    .left-slide h1 {
+        font-size: 40px;
+        margin-bottom: 10px;
+        margin-top: -30px;
+    }
+
+    .right-slide {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 35%;
+        width: 65%;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .right-slide > div {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        height: 100%;
+        width: 100%;
+    }
+
+    button {
+        background-color: #fff;
+        border: none;
+        color: #aaa;
+        cursor: pointer;
+        font-size: 17px;
+        padding: 15px;
+    }
+
+    button:hover {
+        color: #222;
+    }
+
+    button:focus {
+        outline: none;
+    }
+
+    .slider-container .action-buttons button {
+        position: absolute;
+        left: 35%;
+        top: 50%;
+        z-index: 100;
+    }
+
+    .slider-container .action-buttons .down-button {
+        transform: translateX(-100%);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    .slider-container .action-buttons .up-button {
+        transform: translateY(-100%);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+</style>
+<Layout title="Vertical Slider">
+    <div class="container">
+        <section class="slider-container">
+            <div class="left-slide">
+                <div style="background-color: #6BCD6B">
+                    <h1>Rice Terraces</h1>
+                    <p>in Philippines</p>
+                </div>
+                <div style="background-color: #D66363">
+                    <h1>Shibuya Crossing</h1>
+                    <p>in Tokyo</p>
+                </div>
+                <div style="background-color: #94C9D3">
+                    <h1>Twin Peaks</h1>
+                    <p>in El Nido, Palawan</p>
+                </div>
+                <div style="background-color: #6BB0D2">
+                    <h1>Mount Fuji</h1>
+                    <p>in Japan</p>
+                </div>
+            </div>
+            <div class="right-slide">
+                <div
+                    style="background-image: url('https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')"
+                >
+                </div>
+                <div
+                    style="background-image: url('https://images.unsplash.com/photo-1565113180093-077f1e8f1c74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80')"
+                >
+                </div>
+                <div
+                    style="background-image: url('https://images.unsplash.com/photo-1586963312987-3c96f9ace15a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')"
+                >
+                </div>
+                <div
+                    style="background-image: url('https://images.unsplash.com/photo-1590077211339-724573dc4121?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80')"
+                >
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button class="down-button">
+                    <i class="fas fa-arrow-down"></i>
+                </button>
+                <button class="up-button">
+                    <i class="fas fa-arrow-up"></i>
+                </button>
+            </div>
+        </section>
+    </div>
+</Layout>
+
+<script is:inline>
+    const sliderContainer = document.querySelector('.slider-container');
+    const slideRight = document.querySelector('.right-slide');
+    const slideLeft = document.querySelector('.left-slide');
+    const upButton = document.querySelector('.up-button');
+    const downButton = document.querySelector('.down-button');
+    const slidesLength = slideRight.querySelectorAll('div').length;
+
+    let activeSlideIndex = 0;
+
+    slideLeft.style.top = `-${(slidesLength - 1) * 100}vh`;
+
+    const changeSlide = (direction) => {
+        const sliderHeight = sliderContainer.clientHeight;
+        if (direction === 'up') {
+            activeSlideIndex++;
+            if (activeSlideIndex > slidesLength - 1) {
+                activeSlideIndex = 0;
+            }
+        } else if (direction === 'down') {
+            activeSlideIndex--;
+            if (activeSlideIndex < 0) {
+                activeSlideIndex = slidesLength - 1;
+            }
+        }
+
+        slideRight.style.transform = `translateY(-${
+            activeSlideIndex * sliderHeight
+        }px)`;
+        slideLeft.style.transform = `translateY(${
+            activeSlideIndex * sliderHeight
+        }px)`;
+    };
+
+    upButton.addEventListener('click', () => changeSlide('up'));
+    downButton.addEventListener('click', () => changeSlide('down'));
+</script>

@@ -51,10 +51,7 @@
         "title": "Increment Counter",
         "url": "/project/increment-counter"
     },
-    {
-        "title": "Index",
-        "url": "/project/index"
-    },
+
     {
         "title": "Keycode",
         "url": "/project/keycode"

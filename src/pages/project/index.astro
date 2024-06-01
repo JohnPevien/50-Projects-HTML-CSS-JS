@@ -1,6 +1,64 @@
 ---
+import '@/styles/global.css';
+import 'sanitize.css';
+import projects from '../../data/projects.json';
 ---
 
 <main>
-    <h1>Projects Page</h1>
+    <div class="container">
+        <h1>Projects</h1>
+        <ul>
+            {
+                projects.map((project) => (
+                    <li>
+                        <h2 class="title">{project.title}</h2>
+                        <a href={project.url} target="_blank">
+                            View Project
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
 </main>
+
+<script></script>
+
+<style lang="scss">
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container {
+        width: min(100%, 1280px);
+    }
+
+    h1 {
+        text-transform: uppercase;
+        text-align: center;
+    }
+    h2 {
+        margin-top: 0;
+    }
+
+    ul {
+        width: 100%;
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 40px;
+
+        @media screen and (max-width: 576px) {
+            gap: 20px;
+        }
+    }
+
+    li {
+        padding: 30px 15px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+</style>

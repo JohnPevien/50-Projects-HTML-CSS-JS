@@ -17,6 +17,6 @@
     },
     "dependencies": {
         "@astrojs/prism": "^2.1.0",
-        "normalize.css": "^8.0.1"
+        "sanitize.css": "^13.0.0"
     }
 }

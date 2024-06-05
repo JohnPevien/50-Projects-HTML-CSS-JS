@@ -2,7 +2,7 @@
 
 ## 📝 Project Description
 
-50 projects built mainly using HTML, CSS and Vanilla JS.
+50 mini projects built using Astro templates.
 
 Compiled into one site using [Astro](https://astro.build) ♥️
 

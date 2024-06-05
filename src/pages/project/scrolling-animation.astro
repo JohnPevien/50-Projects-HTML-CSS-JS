@@ -1,5 +1,5 @@
 ---
-import Layout from '../../layouts/Layout.astro'
+import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout title="Scrolling Animation">
@@ -25,29 +25,27 @@ import Layout from '../../layouts/Layout.astro'
     <div class="box"><h2>Hello</h2></div>
 </Layout>
 <script is:inline>
-    const boxes = document.querySelectorAll('.box')
-    console.log(boxes)
+    const boxes = document.querySelectorAll('.box');
+    console.log(boxes);
     const checkBoxes = () => {
-        const triggerBottom = (window.innerHeight / 5) * 4
+        const triggerBottom = (window.innerHeight / 5) * 4;
 
         boxes.forEach((box) => {
-            const boxTop = box.getBoundingClientRect().top
+            const boxTop = box.getBoundingClientRect().top;
             if (boxTop < triggerBottom) {
-                box.classList.add('visible')
+                box.classList.add('visible');
             } else {
-                box.classList.remove('visible')
+                box.classList.remove('visible');
             }
-        })
-    }
+        });
+    };
 
-    checkBoxes()
+    checkBoxes();
 
-    window.addEventListener('scroll', checkBoxes)
+    window.addEventListener('scroll', checkBoxes);
 </script>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
     * {
         box-sizing: border-box;
     }

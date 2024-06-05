@@ -1,5 +1,5 @@
 ---
-import Layout from '../../layouts/Layout.astro'
+import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout title="Expanding Cards">
@@ -52,24 +52,22 @@ import Layout from '../../layouts/Layout.astro'
 </Layout>
 
 <script is:inline>
-    const panels = document.querySelectorAll('.panel')
+    const panels = document.querySelectorAll('.panel');
     panels.forEach((panel) => {
         panel.addEventListener('click', () => {
-            removeActiveClasses()
-            panel.classList.add('active')
-        })
-    })
+            removeActiveClasses();
+            panel.classList.add('active');
+        });
+    });
 
     function removeActiveClasses() {
         panels.forEach((panel) => {
-            panel.classList.remove('active')
-        })
+            panel.classList.remove('active');
+        });
     }
 </script>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
     * {
         box-sizing: border-box;
     }

@@ -1,5 +1,5 @@
 ---
-import Layout from '../../layouts/Layout.astro'
+import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout title="Rotating Navigation">
@@ -50,8 +50,6 @@ import Layout from '../../layouts/Layout.astro'
 </Layout>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
     * {
         box-sizing: border-box;
     }
@@ -193,15 +191,15 @@ import Layout from '../../layouts/Layout.astro'
 </style>
 
 <script is:inline>
-    const open = document.getElementById('open')
-    const close = document.getElementById('close')
-    const container = document.querySelector('.container')
+    const open = document.getElementById('open');
+    const close = document.getElementById('close');
+    const container = document.querySelector('.container');
 
     open.addEventListener('click', () => {
-        container.classList.add('show-nav')
-    })
+        container.classList.add('show-nav');
+    });
 
     close.addEventListener('click', () => {
-        container.classList.remove('show-nav')
-    })
+        container.classList.remove('show-nav');
+    });
 </script>

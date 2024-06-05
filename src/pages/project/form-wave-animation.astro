@@ -1,5 +1,5 @@
 ---
-import Layout from '../../layouts/Layout.astro'
+import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout title="Form with Wave Animation Labels">
@@ -24,7 +24,7 @@ import Layout from '../../layouts/Layout.astro'
 </Layout>
 
 <script is:inline>
-    const labels = document.querySelectorAll('.form-control label')
+    const labels = document.querySelectorAll('.form-control label');
 
     labels.forEach((label) => {
         label.innerHTML = label.innerText
@@ -35,13 +35,11 @@ import Layout from '../../layouts/Layout.astro'
                         index * 80
                     }ms">${letter}</span>`
             )
-            .join('')
-    })
+            .join('');
+    });
 </script>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
     * {
         box-sizing: border-box;
     }

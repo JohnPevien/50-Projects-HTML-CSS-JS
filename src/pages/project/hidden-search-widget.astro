@@ -1,5 +1,5 @@
 ---
-import Layout from '../../layouts/Layout.astro'
+import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout title="Hidden search widget">
@@ -12,8 +12,6 @@ import Layout from '../../layouts/Layout.astro'
 </Layout>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
     * {
         box-sizing: border-box;
     }
@@ -81,12 +79,12 @@ import Layout from '../../layouts/Layout.astro'
 </style>
 
 <script is:inline>
-    const search = document.querySelector('.search')
-    const btn = document.querySelector('.btn')
-    const input = document.querySelector('.input')
+    const search = document.querySelector('.search');
+    const btn = document.querySelector('.btn');
+    const input = document.querySelector('.input');
 
     btn.addEventListener('click', () => {
-        search.classList.toggle('active') //used to toggle classes in an element
-        input.focus() // to focus on input element
-    })
+        search.classList.toggle('active'); //used to toggle classes in an element
+        input.focus(); // to focus on input element
+    });
 </script>

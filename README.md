@@ -41,10 +41,10 @@ All commands are run from the root of the project, from a terminal:
 16. [x] [Drink Water](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/drink-water.astro)
 17. [x] [Movie App](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/movie-app.astro)
 18. [x] [Background Slider](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/background-slider.astro)
-19. [ ] Theme Clock
+19. [x] [Theme Clock](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/theme-clock.astro)
 20. [x] [Button Ripple Effect](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/button-ripple-effect.astro)
 21. [x] [Drag N Drop](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/drag-and-drop.astro)
-22. [ ] Drawing App
+22. [x] [Drawing App](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/drawing-app.astro)
 23. [x] [Kinetic CSS Loader](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/kinetic-css-loader.astro)
 24. [x] [Content Placeholder](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/content-placeholder.astro)
 25. [x] [Sticky Navbar](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/sticky-navbar.astro)

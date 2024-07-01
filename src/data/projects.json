@@ -99,5 +99,13 @@
     {
         "title": "Vertical Slider",
         "url": "/project/vertical-slider"
+    },
+    {
+        "title": "Theme Clock",
+        "url": "/project/theme-clock"
+    },
+    {
+        "title": "Drawing App",
+        "url": "/project/drawing-app"
     }
 ]

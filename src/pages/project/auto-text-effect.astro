@@ -1,0 +1,78 @@
+---
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout title="Default Project">
+    <div class="container">
+        <h1 id="text">Starting...</h1>
+
+        <div class="speed-control">
+            <label for="speed">Speed:</label>
+            <input
+                class="speed-input"
+                type="number"
+                name="speed"
+                id="speed"
+                value="1"
+                min="1"
+                max="5"
+                step="1"
+            />
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .speed-control {
+        position: absolute;
+        bottom: 2rem;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        font-size: 18px;
+        background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    }
+
+    .speed-input {
+        padding: 0.2rem;
+        font-size: 18px;
+        width: 5ch;
+    }
+</style>
+
+<style is:inline></style>
+
+<script is:inline>
+    const BASE_DELAY_MS = 300;
+    const textEl = document.getElementById('text');
+    const speedEl = document.getElementById('speed');
+    const text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+    let idx = 1;
+    let speed = BASE_DELAY_MS / speedEl.value;
+
+    writeText();
+
+    function writeText() {
+        textEl.innerText = text.slice(0, idx);
+
+        idx = idx > text.length ? 1 : idx + 1;
+
+        setTimeout(writeText, speed);
+    }
+
+    speedEl.addEventListener(
+        'input',
+        (e) => (speed = BASE_DELAY_MS / e.target.value)
+    );
+</script>

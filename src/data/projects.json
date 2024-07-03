@@ -107,5 +107,9 @@
     {
         "title": "Drawing App",
         "url": "/project/drawing-app"
+    },
+    {
+        "title": "Auto Text Effect",
+        "url": "/project/auto-text-effect"
     }
 ]

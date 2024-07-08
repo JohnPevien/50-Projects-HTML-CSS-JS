@@ -111,5 +111,9 @@
     {
         "title": "Auto Text Effect",
         "url": "/project/auto-text-effect"
+    },
+    {
+        "title": "Password Generator",
+        "url": "/project/password-generator"
     }
 ]

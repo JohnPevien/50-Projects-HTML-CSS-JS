@@ -53,7 +53,7 @@ All commands are run from the root of the project, from a terminal:
 28. [ ] Github Profiles
 29. [ ] Double Heart Click
 30. [ ] Auto Text Effect
-31. [ ] Password Generator
+31. [x] [Password Generator](https://github.com/JohnPevien/50-Projects/blob/main/src/pages/project/password-generator.astro)
 32. [ ] Good, Cheap, Fast Checkboxes
 33. [ ] Notes App
 34. [ ] Animated Countdown

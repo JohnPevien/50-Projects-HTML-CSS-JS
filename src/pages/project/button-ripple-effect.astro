@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import ProjectWrapper from '../../components/ProjectWrapper.astro';
 ---
 
 <style is:global>
@@ -9,15 +10,30 @@ import Layout from '../../layouts/Layout.astro';
 
     body {
         font-family: 'Roboto', sans-serif;
-        display: flex; /*used since most projects are centered*/
         margin: 0;
-        height: 100vh; /*to make the height same as the the current whole browser size*/
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        width: 100%;
+        height: 100%;
         color: #222;
         background: #222;
     }
+</style>
+
+<Layout title="Button Ripple Effect">
+    <ProjectWrapper class="dark-bg">
+        <button class="ripple">Click Me</button>
+    </ProjectWrapper>
+</Layout>
+
+<style is:inline>
+    .dark-bg {
+        background-color: #000;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     button {
         position: relative;
         background-color: purple;
@@ -30,6 +46,10 @@ import Layout from '../../layouts/Layout.astro';
         overflow: hidden;
         margin: 10px 0;
         cursor: pointer;
+    }
+
+    button:focus {
+        outline: none;
     }
 
     button .circle {
@@ -50,31 +70,28 @@ import Layout from '../../layouts/Layout.astro';
     }
 </style>
 
-<Layout title="Button Ripple Effect">
-    <button class="ripple" type="button">Click Me</button>
-</Layout>
-
 <script is:inline>
-    const buttons = document.querySelectorAll('.ripple');
-    buttons.forEach((button) => {
+    const buttons = document.querySelectorAll('.ripple')
+
+    buttons.forEach(button => {
         button.addEventListener('click', function (e) {
-            const x = e.clientX;
-            const y = e.clientY;
+            const x = e.clientX
+            const y = e.clientY
 
-            const buttonTop = e.target.offsetTop;
-            const buttonLeft = e.target.offsetLeft;
+            const buttonTop = e.target.offsetTop
+            const buttonLeft = e.target.offsetLeft
 
-            const xInside = x - buttonLeft;
-            const yInside = y - buttonTop;
+            const xInside = x - buttonLeft
+            const yInside = y - buttonTop
 
-            const circle = document.createElement('span');
-            circle.classList.add('circle');
-            circle.style.top = yInside + 'px';
-            circle.style.left = xInside + 'px';
+            const circle = document.createElement('span')
+            circle.classList.add('circle')
+            circle.style.top = yInside + 'px'
+            circle.style.left = xInside + 'px'
 
-            this.appendChild(circle);
+            this.appendChild(circle)
 
-            setTimeout(() => circle.remove(), 500);
-        });
-    });
+            setTimeout(() => circle.remove(), 500)
+        })
+    })
 </script>

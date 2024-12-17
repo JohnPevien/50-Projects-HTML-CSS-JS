@@ -9,14 +9,31 @@ import Layout from '../../layouts/Layout.astro';
 
     body {
         font-family: 'Roboto', sans-serif;
-        display: flex; /*used since most projects are centered*/
+        background-color: steelblue;
         margin: 0;
-        height: 100vh; /*to make the height same as the the current whole browser size*/
-        justify-content: center;
+    }
+</style>
+
+<Layout title="Drag and Drop">
+    <div class="container">
+        <div class="empty">
+            <div class="fill" draggable="true"></div>
+        </div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+    </div>
+</Layout>
+
+<style is:inline>
+    .container {
+        display: flex;
         align-items: center;
-        flex-direction: row;
-        color: #222;
-        background: #222;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
     }
 
     .empty {
@@ -44,22 +61,16 @@ import Layout from '../../layouts/Layout.astro';
         border-style: dashed;
     }
 
+    .invisible {
+        display: none;
+    }
+
     @media (max-width: 800px) {
-        body {
+        .container {
             flex-direction: column;
         }
     }
 </style>
-
-<Layout title="Drag and Drop">
-    <div class="empty">
-        <div class="fill" draggable="true"></div>
-    </div>
-    <div class="empty"></div>
-    <div class="empty"></div>
-    <div class="empty"></div>
-    <div class="empty"></div>
-</Layout>
 
 <script is:inline>
     const fill = document.querySelector('.fill');

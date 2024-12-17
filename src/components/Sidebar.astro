@@ -1,0 +1,52 @@
+---
+import projects from '../data/projects.json';
+---
+
+<div class="sidebar">
+    <div class="sidebar-content">
+        <h2>Projects</h2>
+        <ul class="project-list">
+            {projects.map((project) => (
+                <li>
+                    <a href={project.url}>{project.title}</a>
+                </li>
+            ))}
+        </ul>
+    </div>
+</div>
+
+<style>
+    .sidebar {
+        height: 100vh;
+        background: #2c3e50;
+        color: white;
+        width: 15vw;
+        flex-shrink: 0;
+        overflow-y: auto;
+    }
+
+    .sidebar-content {
+        padding: 20px;
+    }
+
+    .project-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .project-list li {
+        margin: 10px 0;
+        white-space: nowrap;
+    }
+
+    .project-list a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .project-list a:hover {
+        color: #3498db;
+    }
+</style>

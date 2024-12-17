@@ -1,0 +1,19 @@
+---
+const { class: className } = Astro.props;
+---
+
+<div class:list={["project-wrapper", className]}>
+    <slot />
+</div>
+
+<style>
+    .project-wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+</style>

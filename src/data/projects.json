@@ -115,5 +115,9 @@
     {
         "title": "Password Generator",
         "url": "/project/password-generator"
+    },
+    {
+        "title": "Notes App",
+        "url": "/project/notes-app"
     }
 ]

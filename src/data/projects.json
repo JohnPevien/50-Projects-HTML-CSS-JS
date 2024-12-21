@@ -119,5 +119,9 @@
     {
         "title": "Notes App",
         "url": "/project/notes-app"
+    },
+    {
+        "title": "Animated Countdown",
+        "url": "/project/animated-countdown"
     }
 ]

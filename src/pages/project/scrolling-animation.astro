@@ -1,28 +1,31 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from '@/layouts/Layout.astro';
+import ProjectWrapper from '@/components/ProjectWrapper.astro';
 ---
 
 <Layout title="Scrolling Animation">
-    <h1>Scroll to see animation</h1>
-    <div class="box"><h2>Hello</h2></div>
-    <div class="box"><h2>Hello</h2></div>
-    <div class="box"><h2>Hello</h2></div>
-    <div class="box"><h2>Hello</h2></div>
-    <div class="box"><h2>Hello</h2></div>
-    <div class="box"><h2>Hello</h2></div>
-    <div class="box"><h2>Hello</h2></div>
-    <div class="box"><h2>Hello</h2></div>
-    <div class="box"><h2>Hello</h2></div>
-    <div class="box"><h2>Hello</h2></div>
-    <div class="box"><h2>Hello</h2></div>
-    <div class="box"><h2>Hello</h2></div>
-    <div class="box"><h2>Hello</h2></div>
-    <div class="box"><h2>Hello</h2></div>
-    <div class="box"><h2>Hello</h2></div>
-    <div class="box"><h2>Hello</h2></div>
-    <div class="box"><h2>Hello</h2></div>
-    <div class="box"><h2>Hello</h2></div>
-    <div class="box"><h2>Hello</h2></div>
+    <ProjectWrapper>
+        <h1>Scroll to see animation</h1>
+        <div class="box"><h2>Hello</h2></div>
+        <div class="box"><h2>Hello</h2></div>
+        <div class="box"><h2>Hello</h2></div>
+        <div class="box"><h2>Hello</h2></div>
+        <div class="box"><h2>Hello</h2></div>
+        <div class="box"><h2>Hello</h2></div>
+        <div class="box"><h2>Hello</h2></div>
+        <div class="box"><h2>Hello</h2></div>
+        <div class="box"><h2>Hello</h2></div>
+        <div class="box"><h2>Hello</h2></div>
+        <div class="box"><h2>Hello</h2></div>
+        <div class="box"><h2>Hello</h2></div>
+        <div class="box"><h2>Hello</h2></div>
+        <div class="box"><h2>Hello</h2></div>
+        <div class="box"><h2>Hello</h2></div>
+        <div class="box"><h2>Hello</h2></div>
+        <div class="box"><h2>Hello</h2></div>
+        <div class="box"><h2>Hello</h2></div>
+        <div class="box"><h2>Hello</h2></div>
+    </ProjectWrapper>
 </Layout>
 <script is:inline>
     const boxes = document.querySelectorAll('.box');

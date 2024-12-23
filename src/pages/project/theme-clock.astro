@@ -1,23 +1,26 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import ProjectWrapper from '@/components/ProjectWrapper.astro';
 ---
 
-<Layout title="Default Project">
-    <div class="container">
-        <button class="toggle">Dark mode</button>
+<Layout title="Theme Clock">
+    <ProjectWrapper>
+        <div class="container">
+            <button class="toggle">Dark mode</button>
 
-        <div class="clock-container">
-            <div class="clock">
-                <div class="needle hour"></div>
-                <div class="needle minute"></div>
-                <div class="needle second"></div>
-                <div class="center-point"></div>
+            <div class="clock-container">
+                <div class="clock">
+                    <div class="needle hour"></div>
+                    <div class="needle minute"></div>
+                    <div class="needle second"></div>
+                    <div class="center-point"></div>
+                </div>
+
+                <div class="time"></div>
+                <div class="date"></div>
             </div>
-
-            <div class="time"></div>
-            <div class="date"></div>
         </div>
-    </div>
+    </ProjectWrapper>
 </Layout>
 
 <style>

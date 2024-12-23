@@ -1,5 +1,6 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from '@/layouts/Layout.astro';
+import ProjectWrapper from '@/components/ProjectWrapper.astro';
 ---
 
 <style is:inline>
@@ -67,24 +68,25 @@ import Layout from '../../layouts/Layout.astro';
 </style>
 
 <Layout title="Increment Counter">
-    <div class="counters">
-        <div class="counter-container">
-            <i class="fab fa-twitter fa-6x"></i>
-            <div class="counter" data-target="12000">12000</div>
-            <span>Twitter Followers</span>
+    <ProjectWrapper>
+        <div class="counters">
+            <div class="counter-container">
+                <i class="fab fa-twitter fa-6x"></i>
+                <div class="counter" data-target="12000">12000</div>
+                <span>Twitter Followers</span>
+            </div>
+            <div class="counter-container">
+                <i class="fab fa-youtube fa-6x"></i>
+                <div class="counter" data-target="5000">5000</div>
+                <span>Youtube Subscribers</span>
+            </div>
+            <div class="counter-container">
+                <i class="fab fa-facebook fa-6x"></i>
+                <div class="counter" data-target="7500">7500</div>
+                Facebook Fans
+            </div>
         </div>
-        <div class="counter-container">
-            <i class="fab fa-youtube fa-6x"></i>
-            <div class="counter" data-target="5000">5000</div>
-            <span>Youtube Subscribers</span>
-        </div>
-        <div class="counter-container">
-            <i class="fab fa-facebook fa-6x"></i>
-            <div class="counter" data-target="7500">7500</div>
-            Facebook Fans
-        </div>
-    </div>
-
+    </ProjectWrapper>
     <div class="button">
         <button type="button" id="runagain">Run again</button>
     </div>

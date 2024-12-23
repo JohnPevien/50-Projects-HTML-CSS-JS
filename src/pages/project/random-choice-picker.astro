@@ -1,5 +1,6 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from '@/layouts/Layout.astro';
+import ProjectWrapper from '@/components/ProjectWrapper.astro';
 ---
 
 <style is:inline>
@@ -81,19 +82,21 @@ import Layout from '../../layouts/Layout.astro';
 </style>
 
 <Layout title="Random Choice Picker">
-    <div class="container">
-        <h2>Random Choice Picker</h2>
-        <h3>Enter all of the choices divided by a comma (",")</h3>
-        <textarea name="choices"></textarea>
+    <ProjectWrapper>
+        <div class="container">
+            <h2>Random Choice Picker</h2>
+            <h3>Enter all of the choices divided by a comma (",")</h3>
+            <textarea name="choices"></textarea>
 
-        <div class="buttons">
-            <button class="btn pick" id="pick">Pick</button>
-            <button class="btn clear" id="clear">Clear</button>
+            <div class="buttons">
+                <button class="btn pick" id="pick">Pick</button>
+                <button class="btn clear" id="clear">Clear</button>
+            </div>
+
+            <h3>Choices</h3>
+            <div class="tags"></div>
         </div>
-
-        <h3>Choices</h3>
-        <div class="tags"></div>
-    </div>
+    </ProjectWrapper>
 </Layout>
 
 <script is:inline>

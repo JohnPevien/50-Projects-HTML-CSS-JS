@@ -1,14 +1,17 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from '@/layouts/Layout.astro';
+import ProjectWrapper from '@/components/ProjectWrapper.astro';
 ---
 
 <Layout title="Hidden search widget">
-    <div class="search">
-        <input type="text" class="input" placeholder="Search..." id="" />
-        <button class="btn">
-            <i class="fas fa-search"></i>
-        </button>
-    </div>
+    <ProjectWrapper>
+        <div class="search">
+            <input type="text" class="input" placeholder="Search..." id="" />
+            <button class="btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </ProjectWrapper>
 </Layout>
 
 <style>

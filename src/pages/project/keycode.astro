@@ -1,5 +1,6 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from '@/layouts/Layout.astro';
+import ProjectWrapper from '@/components/ProjectWrapper.astro';
 ---
 
 <style is:inline>
@@ -43,17 +44,19 @@ import Layout from '../../layouts/Layout.astro';
 </style>
 
 <Layout title="Key Code">
-    <div id="insert">
-        <div class="key">
-            <small>event.key</small>
+    <ProjectWrapper>
+        <div id="insert">
+            <div class="key">
+                <small>event.key</small>
+            </div>
+            <div class="key">
+                <small>event.keyCode</small>
+            </div>
+            <div class="key">
+                <small>event.code</small>
+            </div>
         </div>
-        <div class="key">
-            <small>event.keyCode</small>
-        </div>
-        <div class="key">
-            <small>event.code</small>
-        </div>
-    </div>
+    </ProjectWrapper>
 </Layout>
 
 <script is:inline>

@@ -1,13 +1,16 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import ProjectWrapper from '@/components/ProjectWrapper.astro';
 ---
 
 <Layout title="Double Click Heart">
-    <div class="container">
-        <h3>Double click on the image to <i class="fas fa-heart"></i> it</h3>
-        <small>You liked it <span id="times">0</span> times</small>
-        <div class="heart-me"></div>
-    </div>
+    <ProjectWrapper>
+        <div class="container">
+            <h3>Double click on the image to <i class="fas fa-heart"></i> it</h3>
+            <small>You liked it <span id="times">0</span> times</small>
+            <div class="heart-me"></div>
+        </div>
+    </ProjectWrapper>
 </Layout>
 
 <style>

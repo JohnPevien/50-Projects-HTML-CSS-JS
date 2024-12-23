@@ -1,5 +1,6 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from '@/layouts/Layout.astro';
+import ProjectWrapper from '@/components/ProjectWrapper.astro';
 ---
 
 <style is:inline>
@@ -77,9 +78,11 @@ import Layout from '../../layouts/Layout.astro';
 </style>
 
 <Layout title="Kinetic CSS Loader">
-    <div class="container">
-        <div class="kinetic"></div>
-    </div>
+    <ProjectWrapper>
+        <div class="container">
+            <div class="kinetic"></div>
+        </div>
+    </ProjectWrapper>
 </Layout>
 
 <script is:inline>

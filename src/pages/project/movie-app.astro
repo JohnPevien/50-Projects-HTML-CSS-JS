@@ -1,19 +1,22 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from '@/layouts/Layout.astro';
+import ProjectWrapper from '@/components/ProjectWrapper.astro';
 ---
 
 <Layout title="Movie App">
-    <header>
-        <form id="form">
-            <input
-                type="text"
-                id="search"
-                class="search"
-                placeholder="Search"
-            />
-        </form>
-    </header>
-    <main id="main"></main>
+    <ProjectWrapper>
+        <header>
+            <form id="form">
+                <input
+                    type="text"
+                    id="search"
+                    class="search"
+                    placeholder="Search"
+                />
+            </form>
+        </header>
+        <main id="main"></main>
+    </ProjectWrapper>
 </Layout>
 
 <style is:inline>

@@ -1,0 +1,86 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import ProjectWrapper from '@/components/ProjectWrapper.astro';
+---
+
+<Layout title="Hoverboard">
+    <ProjectWrapper class="wrapper">
+        <div class="squares-container" id="container"></div>
+    </ProjectWrapper>
+</Layout>
+
+<style is:inline>
+
+    .wrapper {
+        background: linear-gradient(135deg, #141e30, #243b55);
+
+    }
+    .squares-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 400px;
+    }
+
+    .square {
+        background-color: #1d1d1d;
+        box-shadow: 0 0 2px #000;
+        height: 16px;
+        width: 16px;
+        margin: 2px;
+        transition: 2s ease;
+    }
+
+    .square:hover {
+        transition-duration: 0s;
+    }
+</style>
+
+<script is:inline>
+    const container = document.getElementById('container');
+    const colors = [
+        '#e74c3c',
+        '#8e44ad',
+        '#3498db',
+        '#e67e22',
+        '#2ecc71',
+        '#465efb',
+        '#ff6e7f',
+        '#bfe9ff',
+        '#9b59b6',
+        '#ff7979',
+        '#c2ffd8',
+        '#6BCD6B',
+        '#D66363',
+        '#94C9D3',
+        '#6BB0D2',
+    ];
+    const SQUARES = 500;
+
+    for (let i = 0; i < SQUARES; i++) {
+        const square = document.createElement('div');
+        square.classList.add('square');
+
+        square.addEventListener('mouseover', () => setColor(square));
+
+        square.addEventListener('mouseout', () => removeColor(square));
+
+        container.appendChild(square);
+    }
+
+    function setColor(element) {
+        const color = getRandomColor();
+        element.style.background = color;
+        element.style.boxShadow = `0 0 2px ${color}, 0 0 10px ${color}`;
+    }
+
+    function removeColor(element) {
+        element.style.background = '#1d1d1d';
+        element.style.boxShadow = '0 0 2px #000';
+    }
+
+    function getRandomColor() {
+        return colors[Math.floor(Math.random() * colors.length)];
+    }
+</script>
